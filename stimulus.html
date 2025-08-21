@@ -124,7 +124,16 @@
     transform: translateY(-4px);
   }
 
+   /* Make the chart container have a reasonable height on mobile */
+  #stimulusLineChart {
+    height: 250px; /* Adjust for mobile */
+  }
 
+  @media (min-width: 768px) {
+    #stimulusLineChart {
+      height: 300px; /* Larger height for tablets/desktops */
+    }
+  }
 
 
   </style>
@@ -637,12 +646,13 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <section class="mx-auto max-w-7xl mt-20 px-6 pb-8">
-  
   <div class="rounded-3xl bg-slate-900/70 border border-slate-800 p-6 glow-card">
     <h2 class="text-xl font-bold mb-4 text-center">
       Top States by Stimulus Participation
     </h2>
-    <canvas id="stimulusLineChart" style="height: 100px; width: 350px;"></canvas>
+    <div class="w-full">
+      <canvas id="stimulusLineChart"></canvas>
+    </div>
     <p class="mt-2 text-center text-sm text-slate-400">
       Participation by state, based on number of checks delivered.
     </p>
@@ -661,7 +671,7 @@
           data: [2100, 1950, 1700, 1200, 1000, 850, 800],
           borderColor: "#DC2626",
           backgroundColor: "#DC2626",
-          tension: 0.4, // smooth curve
+          tension: 0.4,
           fill: false,
           pointRadius: 6,
           pointHoverRadius: 8,
@@ -670,6 +680,8 @@
       ],
     },
     options: {
+      responsive: true,       // makes chart responsive
+      maintainAspectRatio: false, // allows custom height
       plugins: {
         legend: { display: false },
         tooltip: {
@@ -812,3 +824,4 @@
 
 </body>
 </html>
+
