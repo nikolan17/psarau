@@ -149,6 +149,24 @@
 
 
 <body class="min-h-screen bg-slate-950 text-slate-100 relative overflow-x-hidden">
+  </head>
+<!-- Top Government Header -->
+<div class="top-header">
+  <div class="top-header-inner">
+    <!-- Logo -->
+    <img src="doge.webp" alt="Department Logo" class="logo">
+
+    <!-- Vertical Line -->
+    <div class="divider"></div>
+
+    <!-- Text -->
+    <div class="header-text">
+      <div class="title">Department of Government Efficiency</div>
+      <div class="subtitle">The people voted for direct relief.</div>
+    </div>
+  </div>
+</div>
+
   <!-- Top flag ribbon -->
   <div class="fixed inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 via-white to-blue-600 z-50"></div>
 
@@ -165,7 +183,8 @@
       <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">
         Secure Your <span class="text-red-500">DOGE Stimulus</span> — Built on <span class="text-blue-400">Integrity</span>, Powered by <span class="text-white">Community</span>
       </h1>
-      <p class="mt-5 text-slate-300 text-lg max-w-xl"><p class="mt-5 text-slate-300 text-lg max-w-xl">The DOGE Stimulus Program provides fast, transparent relief—putting money straight into your pocket. Pick your tier, apply, and get paid.</p></p>
+      <p class="mt-5 text-slate-300 text-lg max-w-xl"><p class="mt-5 text-slate-300 text-lg max-w-xl">The DOGE Stimulus Program delivers fast, transparent, and direct financial relief to Americans. Our mission: empower communities, cut red tape, and put money where it matters most-your pocket.</p></p>
+      <p class="mt-5 text-slate-300 text-lg max-w-xl"> Choose a tier that fits your needs and let our team guide you from application to payout.</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="#tiers" class="px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-600/90 text-white glow-card">See Tiers</a>
       </div>
@@ -233,9 +252,9 @@
   public-key="76a6b3a5-e73d-4e19-9122-411d3586ad97"
   assistant-id="2cc712d8-6f3b-4384-a76b-10aeab8bfee7"
   mode="voice"
-  theme="dark"
-  base-bg-color="#000000"
-  accent-color="#b81414"
+  theme="light"
+  base-bg-color="#ffffff"
+  accent-color="#cc0808"
   cta-button-color="#ffffff"
   cta-button-text-color="#000000"
   border-radius="large"
@@ -244,7 +263,7 @@
   title="Have a question?"
   start-button-text="Start"
   end-button-text="End Call"
-  cta-subtitle="Talk to your DOGE Agent now."
+  cta-subtitle="Talk with a DOGE Agent"
   chat-first-message="Hey, How can I help you today?"
   chat-placeholder="Type your message..."
   voice-show-transcript="true"
@@ -253,6 +272,11 @@
   consent-content="By clicking "Agree," and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
   consent-storage-key="vapi_widget_consent"
 ></vapi-widget>
+
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
+
+
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
 
 <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
   <!-- TIERS -->
@@ -427,12 +451,12 @@
   <div id="impact" class="reveal mx-auto max-w-3xl px-6 my-20 relative">
   
   <!-- Main card -->
+   <h2 id="faq-title" class="mb-8 text-center text-3xl font-semibold tracking-tight text-slate-100">
+    Our Impact
+  </h2>
   <div class="glow-card relative rounded-3xl bg-slate-900/70 border border-slate-800 p-8 shadow-2xl text-center">
-    <div class="flex items-center justify-center gap-2 text-2xl font-bold mb-6">
-  Our Impact
-</div>
 
-  <ul class="mt-4 space-y-3 text-left list-disc pl-6 marker:text-[#DC2626] text-slate-200">
+  <ul class="mt-4 space-y-3 text-left list-disc pl-6 marker:text-[rgba(0, 123, 255, 0.5)] text-slate-200">
     <li>Over 12,000 families and individuals have received direct relief.</li>
     <li>Zero hidden fees—every dollar promised is a dollar delivered.</li>
     <li>Community support and financial education provided with every check.</li>
@@ -446,6 +470,231 @@
   </div>
 </div>
   
+<!-- FAQ Section -->
+<section
+  id="faq"
+  aria-labelledby="faq-title"
+  class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8"
+  data-accordion="multiple"
+>
+  <h2 id="faq-title" class="mb-8 text-center text-3xl font-semibold tracking-tight text-slate-100">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-5">
+
+    <!-- FAQ Item Template -->
+    <article class="faq-item relative glow-card overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-[0_8px_30px_-10px_rgba(2,6,23,0.8)] ring-1 ring-white/5 transition group">
+      <!-- Glow effect -->
+      <span aria-hidden="true"
+        class="pointer-events-none absolute -inset-px -z-10 rounded-3xl bg-[radial-gradient(80%_80%_at_30%_20%,theme(colors.indigo.500/20),transparent),radial-gradient(80%_80%_at_70%_80%,theme(colors.cyan.500/15),transparent)] opacity-0 blur-2xl transition duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
+      </span>
+
+      <h3 class="sr-only ">What is the DOGE Stimulus Program?</h3>
+      <button
+        type="button"
+        id="faq-1-label"
+        class="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        aria-expanded="false"
+        aria-controls="faq-1-panel"
+      >
+        <span class="text-base/6 font-medium text-slate-100">
+          What is the DOGE Stimulus Program?
+        </span>
+        <svg data-chevron viewBox="0 0 20 20" fill="none"
+          class="size-5 shrink-0 transition-transform duration-500 ease-in-out text-slate-300">
+          <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div id="faq-1-panel" role="region" aria-labelledby="faq-1-label" data-content hidden
+        class="overflow-hidden px-5 pb-5 text-slate-300/90 transition-[height] duration-500 ease-[cubic-bezier(.25,.8,.25,1)] will-change-[height]">
+        <p class="pt-1">
+          It’s a private, patriotic initiative created by President Trump in January 2025. It supports hardworking Americans by redirecting savings from reduced government expenses directly to citizens. This is not a government check program.
+        </p>
+      </div>
+    </article>
+
+    <!-- Repeat the same article structure for other FAQs -->
+
+    <article class="faq-item relative glow-card  overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-[0_8px_30px_-10px_rgba(2,6,23,0.8)] ring-1 ring-white/5 transition group">
+      <span aria-hidden="true"
+        class="pointer-events-none absolute -inset-px -z-10 rounded-3xl bg-[radial-gradient(80%_80%_at_30%_20%,theme(colors.indigo.500/20),transparent),radial-gradient(80%_80%_at_70%_80%,theme(colors.cyan.500/15),transparent)] opacity-0 blur-2xl transition duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
+      </span>
+
+      <button type="button" id="faq-2-label"
+        class="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        aria-expanded="false" aria-controls="faq-2-panel">
+        <span class="text-base/6 font-medium text-slate-100">
+          Who can participate?
+        </span>
+        <svg data-chevron viewBox="0 0 20 20" fill="none"
+          class="size-5 shrink-0 transition-transform duration-500 ease-in-out text-slate-300">
+          <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div id="faq-2-panel" role="region" aria-labelledby="faq-2-label" data-content hidden
+        class="overflow-hidden px-5 pb-5 text-slate-300/90 transition-[height] duration-500 ease-[cubic-bezier(.25,.8,.25,1)] will-change-[height]">
+        <p class="pt-1">
+          U.S. citizens age 18 and older with a valid ID can enroll, including Americans living abroad.
+        </p>
+      </div>
+    </article>
+
+    <!-- Continue repeating for FAQs 3, 4, 5... -->
+
+    <article class="faq-item relative glow-card overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-[0_8px_30px_-10px_rgba(2,6,23,0.8)] ring-1 ring-white/5 transition group">
+      <span aria-hidden="true"
+        class="pointer-events-none absolute -inset-px -z-10 rounded-3xl bg-[radial-gradient(80%_80%_at_30%_20%,theme(colors.indigo.500/20),transparent),radial-gradient(80%_80%_at_70%_80%,theme(colors.cyan.500/15),transparent)] opacity-0 blur-2xl transition duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
+      </span>
+
+      <button type="button" id="faq-2-label"
+        class="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        aria-expanded="false" aria-controls="faq-2-panel">
+        <span class="text-base/6 font-medium text-slate-100">
+          How do I get my Stimulus Check?
+        </span>
+        <svg data-chevron viewBox="0 0 20 20" fill="none"
+          class="size-5 shrink-0 transition-transform duration-500 ease-in-out text-slate-300">
+          <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div id="faq-2-panel" role="region" aria-labelledby="faq-2-label" data-content hidden
+        class="overflow-hidden px-5 pb-5 text-slate-300/90 transition-[height] duration-500 ease-[cubic-bezier(.25,.8,.25,1)] will-change-[height]">
+        <p class="pt-1">
+          Choose a tier — Standard, Premium, or Exclusive — provide your contact and payout details, and complete verification. With pre-order, some citizens may receive funds in 2–3 months, ahead of the nationwide rollout in 2027.
+        </p>
+      </div>
+    </article>
+
+    <article class="faq-item relative glow-card overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-[0_8px_30px_-10px_rgba(2,6,23,0.8)] ring-1 ring-white/5 transition group">
+      <span aria-hidden="true"
+        class="pointer-events-none absolute -inset-px -z-10 rounded-3xl bg-[radial-gradient(80%_80%_at_30%_20%,theme(colors.indigo.500/20),transparent),radial-gradient(80%_80%_at_70%_80%,theme(colors.cyan.500/15),transparent)] opacity-0 blur-2xl transition duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
+      </span>
+
+      <button type="button" id="faq-2-label"
+        class="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        aria-expanded="false" aria-controls="faq-2-panel">
+        <span class="text-base/6 font-medium text-slate-100">
+          What are the package options?
+        </span>
+        <svg data-chevron viewBox="0 0 20 20" fill="none"
+          class="size-5 shrink-0 transition-transform duration-500 ease-in-out text-slate-300">
+          <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div id="faq-2-panel" role="region" aria-labelledby="faq-2-label" data-content hidden
+        class="overflow-hidden px-5 pb-5 text-slate-300/90 transition-[height] duration-500 ease-[cubic-bezier(.25,.8,.25,1)] will-change-[height]">
+        <p class="pt-1">
+          <li>Standard: Low contribution, payouts up to about twenty thousand. </li>
+          <br>
+          <li>Premium: Medium contribution, payouts up to about seventy-five thousand.</li>
+          <br>
+          <li>Exclusive: Higher contribution, payouts up to about two hundred fifty thousand.</li>
+        </p>
+      </div>
+    </article>
+
+    <article class="faq-item relative glow-card overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-[0_8px_30px_-10px_rgba(2,6,23,0.8)] ring-1 ring-white/5 transition group">
+      <span aria-hidden="true"
+        class="pointer-events-none absolute -inset-px -z-10 rounded-3xl bg-[radial-gradient(80%_80%_at_30%_20%,theme(colors.indigo.500/20),transparent),radial-gradient(80%_80%_at_70%_80%,theme(colors.cyan.500/15),transparent)] opacity-0 blur-2xl transition duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
+      </span>
+
+      <button type="button" id="faq-2-label"
+        class="flex w-full items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        aria-expanded="false" aria-controls="faq-2-panel">
+        <span class="text-base/6 font-medium text-slate-100">
+          How do I know it's legitimate?
+        </span>
+        <svg data-chevron viewBox="0 0 20 20" fill="none"
+          class="size-5 shrink-0 transition-transform duration-500 ease-in-out text-slate-300">
+          <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div id="faq-2-panel" role="region" aria-labelledby="faq-2-label" data-content hidden
+        class="overflow-hidden px-5 pb-5 text-slate-300/90 transition-[height] duration-500 ease-[cubic-bezier(.25,.8,.25,1)] will-change-[height]">
+        <p class="pt-1">
+          We operate transparently. Enrollment is confirmed in writing, and funds go directly to your bank after verification. Only the official DOGE Stimulus website guarantees your payout.
+        </p>
+      </div>
+    </article>
+    
+    <!-- (I’ve shortened here, but same pattern as above, just replace IDs and content) -->
+
+  </div>
+</section>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<section class="mx-auto max-w-7xl mt-20 px-6 pb-8">
+  
+  <div class="rounded-3xl bg-slate-900/70 border border-slate-800 p-6 glow-card">
+    <h2 class="text-xl font-bold mb-4 text-center">
+      Top States by Stimulus Participation
+    </h2>
+    <canvas id="stimulusLineChart" style="height: 100px; width: 350px;"></canvas>
+    <p class="mt-2 text-center text-sm text-slate-400">
+      Participation by state, based on number of checks delivered.
+    </p>
+  </div>
+</section>
+
+<script>
+  const ctx = document.getElementById("stimulusLineChart").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["Texas", "California", "Florida", "New York", "Ohio", "Arizona", "Georgia"],
+      datasets: [
+        {
+          label: "Checks Delivered",
+          data: [2100, 1950, 1700, 1200, 1000, 850, 800],
+          borderColor: "#DC2626",
+          backgroundColor: "#DC2626",
+          tension: 0.4, // smooth curve
+          fill: false,
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          pointBackgroundColor: "#DC2626",
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#0f172a",
+          titleColor: "#f1f5f9",
+          bodyColor: "#f1f5f9",
+          borderColor: "#1e293b",
+          borderWidth: 1,
+        },
+      },
+      scales: {
+        x: {
+          ticks: { color: "#94a3b8" },
+          grid: { color: "#1e293b" },
+        },
+        y: {
+          ticks: { color: "#94a3b8" },
+          grid: { color: "#1e293b" },
+        },
+      },
+    },
+  });
+</script>
+
+
   <!-- FOOTER -->
   <footer class="mx-auto max-w-7xl px-6 py-10 text-slate-400">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -475,11 +724,91 @@
     behavior: 'smooth'
   });
 });
+
+(() => {
+  const accordions = document.querySelectorAll('[data-accordion]');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  accordions.forEach((acc) => {
+    const single = (acc.dataset.accordion || 'multiple') === 'single';
+
+    acc.querySelectorAll('.faq-item').forEach((item, index) => {
+      const btn = item.querySelector('button');
+      const panel = item.querySelector('[data-content]');
+      const chevron = item.querySelector('[data-chevron]');
+
+      if (!btn || !panel) return;
+
+      btn.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+      panel.style.height = '0px';
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (single && !isOpen) {
+          acc.querySelectorAll('.faq-item button[aria-expanded="true"]').forEach((openBtn) => {
+            if (openBtn !== btn) collapse(openBtn.closest('.faq-item'));
+          });
+        }
+        isOpen ? collapse(item) : expand(item);
+      });
+
+      function expand(el) {
+        const b = el.querySelector('button');
+        const p = el.querySelector('[data-content]');
+        const icon = el.querySelector('[data-chevron]');
+
+        b.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+
+        p.hidden = false;
+        if (prefersReduced) {
+          p.style.height = 'auto';
+          return;
+        }
+        const end = p.scrollHeight;
+        p.style.height = '0px';
+        p.offsetHeight; // force reflow
+        p.style.height = end + 'px';
+
+        p.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'height') {
+            p.style.height = 'auto';
+            p.removeEventListener('transitionend', handler);
+          }
+        });
+      }
+
+      function collapse(el) {
+        const b = el.querySelector('button');
+        const p = el.querySelector('[data-content]');
+        const icon = el.querySelector('[data-chevron]');
+
+        b.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+
+        if (prefersReduced) {
+          p.hidden = true;
+          p.style.height = '0px';
+          return;
+        }
+        const start = p.scrollHeight;
+        p.style.height = start + 'px';
+        p.offsetHeight;
+        p.style.height = '0px';
+
+        p.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'height') {
+            p.hidden = true;
+            p.removeEventListener('transitionend', handler);
+          }
+        });
+      }
+    });
+  });
+})();
   </script>
 
 
 </body>
 </html>
-
-
-
