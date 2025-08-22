@@ -73,6 +73,20 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
+
+   #submitBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  #submitBtn.clicked {
+    background-color: #367c39;
+  }
+</style>
   </style>
 </head>
 <body>
@@ -124,9 +138,10 @@
 </div>
 
 <script>
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbz-cgbJ3pJ2wma0TcwmUgPONbAvxpcs4cPuPCVN_TLJGsQAqYeuhHv1G7cGzaw3uHro/exec";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbw0Fv7DOaj3AY7TnSg-LYdBEB3nJf1269Cdvra_Avt_b2skthVMZPO6IOL7VRz3pcKH/exec";
 
 const phoneInput = document.getElementById('phone');
+const submitBtn = document.getElementById('submitBtn');
 
 // Auto-format phone number +1 xxx xxx xxxx, numeric only
 phoneInput.addEventListener('input', function(e) {
@@ -151,7 +166,7 @@ function startRedirectAnimation() {
   let count = 0;
   const interval = setInterval(() => {
     count = (count + 1) % 4;
-    dots.textContent = '.'.repeat(count);
+    if(dots) dots.textContent = '.'.repeat(count);
   }, 500);
   return interval;
 }
@@ -189,9 +204,13 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
   } else phoneError.style.display = 'none';
 
   // Telegram optional
-  const telegram = document.getElementById('telegram').value.trim();
+  const telegram = document.getElementById('telegram') ? document.getElementById('telegram').value.trim() : '';
 
   if (!valid) return;
+
+  // Darken button and prevent double clicks
+  submitBtn.classList.add('clicked');
+  submitBtn.disabled = true;
 
   // Start animation
   const interval = startRedirectAnimation();
@@ -216,10 +235,15 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
     clearInterval(interval);
     console.error(error);
     const statusDiv = document.getElementById('status');
-    statusDiv.textContent = "A problem occurred. Please check the Web App URL and try again.";
-    statusDiv.classList.add('err');
+    if(statusDiv) {
+      statusDiv.textContent = "A problem occurred. Please check the Web App URL and try again.";
+      statusDiv.classList.add('err');
+    }
+    submitBtn.disabled = false; // Re-enable button if error occurs
+    submitBtn.classList.remove('clicked');
   }
 });
+
 </script>
 
 
